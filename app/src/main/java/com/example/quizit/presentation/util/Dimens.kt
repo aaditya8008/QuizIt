@@ -18,7 +18,7 @@ class Dimens {
         val MediumIconSize=40.dp
         val SmallSpacerHeight=8.dp
         val MediumSpacerHeight=18.dp
-        val LargeSpacerHeight=30.dp
+        val LargeSpacerHeight=100.dp
         val LargeCornerRadius=50.dp
         val MediumBoxHeight=60.dp
 

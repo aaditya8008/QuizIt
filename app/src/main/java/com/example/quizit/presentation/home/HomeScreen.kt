@@ -29,7 +29,6 @@ fun PrevHome(){
 fun HomeScreen(state: StateHomeScreen,
                event:(EventHomeScreen)->Unit,
                navController: NavController
-
 ) {
     Column (
         modifier = Modifier

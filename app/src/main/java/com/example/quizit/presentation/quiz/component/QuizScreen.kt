@@ -18,11 +18,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.quizit.R
+import com.example.quizit.presentation.util.Constants
 import com.example.quizit.presentation.util.Dimens
 
 @Preview
 @Composable
 fun Prevquiz(){
+    QuizScreen(numOfQuiz = 3, quizCategory = "GK", quizDifficulty ="Easy" )
 
 }
 

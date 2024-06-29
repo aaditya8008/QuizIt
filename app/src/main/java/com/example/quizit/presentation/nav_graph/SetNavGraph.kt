@@ -3,6 +3,7 @@ package com.example.quizit.presentation.nav_graph
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -12,6 +13,11 @@ import androidx.navigation.navArgument
 import com.example.quizit.presentation.home.HomeScreen
 import com.example.quizit.presentation.home.HomeScreenViewModel
 import com.example.quizit.presentation.quiz.component.QuizScreen
+@Preview
+@Composable
+fun Prnav(){
+    SetNavGraph()
+}
 
 @Composable
 fun SetNavGraph(){

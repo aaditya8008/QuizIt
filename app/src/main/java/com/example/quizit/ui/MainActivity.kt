@@ -1,4 +1,4 @@
-package com.example.quizit
+package com.example.quizit.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -13,8 +13,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.compose.rememberNavController
+import com.example.quizit.R
 import com.example.quizit.presentation.home.HomeScreen
 import com.example.quizit.presentation.home.HomeScreenViewModel
+import com.example.quizit.presentation.nav_graph.SetNavGraph
 import com.example.quizit.ui.theme.QuizItTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,12 +36,7 @@ class MainActivity : ComponentActivity() {
                        .background(colorResource(id = R.color.background)),
                     contentAlignment = Alignment.Center
                 ) {
-                    val viewModel:HomeScreenViewModel= hiltViewModel()
-                    val state by viewModel.homeState.collectAsState()
-                    HomeScreen(
-                        state=state,
-                        event = viewModel::onEvent
-                    )
+                    SetNavGraph()
                 }
             }
         }
