@@ -12,7 +12,7 @@ import okhttp3.Dispatcher
 class GetQuizesUseCases (
     val quizRepositry: QuizRepositry
 ){
-fun getQuizes(
+operator fun invoke(
     amount: Int,
     category: Int,
     difficulty: String,

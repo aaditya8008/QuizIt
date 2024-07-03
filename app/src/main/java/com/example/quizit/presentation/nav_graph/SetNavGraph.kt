@@ -12,7 +12,11 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.quizit.presentation.home.HomeScreen
 import com.example.quizit.presentation.home.HomeScreenViewModel
+import com.example.quizit.presentation.quiz.QuizViewModel
+import com.example.quizit.presentation.quiz.StateQuizScreen
 import com.example.quizit.presentation.quiz.component.QuizScreen
+import com.example.quizit.presentation.score.ScoreScreen
+
 @Preview
 @Composable
 fun Prnav(){
@@ -44,8 +48,21 @@ composable(route = Routes.HomeScreen.route){
             val category=it.arguments?.getString(ARG_KEY_QUIZ_CATEGORY)
             val difficulty=it.arguments?.getString(ARG_KEY_QUIZ_DIFFICULTY)
             val type=it.arguments?.getString(ARG_KEY_QUIZ_TYPE)
+val quizViewModel:QuizViewModel= hiltViewModel()
+            val state:StateQuizScreen by quizViewModel.quizList.collectAsState()
+            QuizScreen(numOfQuiz = numOfQuizzes!!, quizCategory = category!!, quizDifficulty = difficulty!!, quizType = type!!, event = quizViewModel::onEvent, state = state,navController=navController)
 
-            QuizScreen(numOfQuiz = numOfQuizzes!!, quizCategory = category!!, quizDifficulty = difficulty!!)
+        }
+        composable(
+            route = Routes.ScoreScreen.route,
+            arguments = listOf(
+                navArgument(NOQ_KEY){type=NavType.IntType},
+                navArgument(CORRECT_ANS_KEY){type=NavType.IntType}
+            )
+        ){
+            val numOfQuestions=it.arguments?.getInt(NOQ_KEY)
+            val numOfCorrections=it.arguments?.getInt(CORRECT_ANS_KEY)
+            ScoreScreen(numOfQuestions = numOfQuestions!!, numOfCorrectAns = numOfCorrections!!, navController = navController)
 
         }
 

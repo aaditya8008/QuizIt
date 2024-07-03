@@ -1,6 +1,5 @@
 package com.example.quizit.presentation.home
 
-import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,9 +8,11 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.quizit.R
 import com.example.quizit.presentation.common.AppDropDownMenu
 import com.example.quizit.presentation.common.ButtonBox
 import com.example.quizit.presentation.nav_graph.Routes
@@ -50,11 +51,20 @@ fun HomeScreen(state: StateHomeScreen,
 
         Spacer(modifier = Modifier.height(Dimens.MediumSpacerHeight))
 
-        ButtonBox(text="Generate Quiz", padding=Dimens.MediumPadding,{
-           navController.navigate(
-               route = Routes.QuizScreen.passQuizParams(state.numberOfQuiz,state.category,state.difficulty,state.type)
-           )
-        })
+        ButtonBox(
+            text="Generate Quiz",
+            padding=Dimens.MediumPadding,
+            onClick = {
+               navController.navigate(
+                   route = Routes.QuizScreen.passQuizParams(state.numberOfQuiz,state.category,state.difficulty,state.type)
+               )
+            },
+           fraction= 1f,
+            fontSize=Dimens.SmallTextSize,
+            textColor=colorResource(id= R.color.black),
+            containerColor=colorResource(id= R.color.uppertext)
+
+        )
 
     }
 

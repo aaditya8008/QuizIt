@@ -71,8 +71,8 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:2.46")
+    kapt("com.google.dagger:hilt-android-compiler:2.46")
 
     //Splash Api
     implementation ("androidx.core:core-splashscreen:1.0.1")
@@ -83,7 +83,7 @@ dependencies {
 
     //Dagger Hilt
     implementation ("com.google.dagger:hilt-android:2.49")
-    kapt("com.google.dagger:hilt-compiler:2.45")
+    kapt("com.google.dagger:hilt-compiler:2.46")
     implementation ("androidx.hilt:hilt-navigation-compose:1.2.0")
 
     //Retrofit

@@ -5,6 +5,11 @@ import androidx.compose.ui.unit.sp
 
 class Dimens {
     companion object {
+        val LargeLottieAnimSize=70.dp
+        val SmallSpacerWidth=20.dp
+        val SmallCircleShape=40.dp
+        val ExtraLargeSpacerHeight=30.dp
+        val SmallTextSize =20.sp
         val MediumCornerRadius=30.dp
         val VerySmallViewHeight=2.dp
         val VerySmallPadding=10.dp
